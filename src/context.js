@@ -8,6 +8,7 @@ const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [cocktails, setCocktails] = useState([]);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const fetchData = useCallback(async () => {
     setLoading(true);
@@ -36,6 +37,8 @@ const AppProvider = ({ children }) => {
         loading,
         cocktails,
         setSearchTerm,
+        isSidebarOpen,
+        setIsSidebarOpen,
       }}
     >
       {children}
